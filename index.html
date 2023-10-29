@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <title>Pepe el prestamista</title>
+</head>
+
+<body>
+  <header>
+    <img src="img/monkas.png" alt="Pepe">
+    <h1>Pepe el prestamista</h1>
+  </header>
+  <main>
+    <section>      
+      <h2>Solicite su prestamo</h2>
+      <form id="formularioPrestamo" method="post">
+        <div>
+          <label for="dni">
+            DNI:<br />
+            <input type="number" name="dni" id="dni" required step="1" min="15000000" max="70000000">
+          </label>
+        </div>
+        
+        <div>
+          <label for="monto">
+            Monto:<br />
+            <input type="number" name="monto" id="monto" required min="5000" max="500000">
+          </label>
+        </div>
+        
+        <div>
+          <label for="cuotas">
+            Cuotas:<br />
+            <select name="cuotas" id="cuotas" required>
+              <option value="1">1</option>
+              <option value="3">3</option>
+              <option value="6">6</option>
+              <option value="9">9</option>
+              <option value="12">12</option>
+            </select>
+          </label>
+        </div>
+        <br />
+        <button type='submit' id='botonCalcular'>Calcular</button>
+        
+        <div>
+          <p>
+            Resultado:<br/>
+            <span id="resultado"></span>
+          </p>
+        </div>
+      </form>
+      <button id='botonEliminarGuardados'>Eliminar prestamos guardados</button>
+    </section>
+
+    <section id="contenedorGeolocalizacion"></section>
+  </main>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src='script.js'></script>
+</body>
+
+</html>
